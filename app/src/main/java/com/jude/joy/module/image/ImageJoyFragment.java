@@ -22,6 +22,9 @@ public class ImageJoyFragment extends BeamListFragment<ImageJoyPresenter,ImageJo
         return super.getConfig()
                 .setLoadmoreAble(true)
                 .setRefreshAble(true)
-                .setNoMoreAble(true);
+                .setNoMoreAble(true)
+                .setErrorAble(true)
+                .setErrorTouchToResumeAble(true);
+
     }
 }

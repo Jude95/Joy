@@ -12,7 +12,7 @@ import com.jude.joy.model.callback.DataCallback;
  * Created by Mr.Jude on 2015/8/20.
  */
 public class ImageJoyPresenter extends BeamListFragmentPresenter<ImageJoyFragment,ImageJoy> {
-    int page = 0;
+    int page = 1;
     @Override
     protected void onCreate(ImageJoyFragment view, Bundle savedState) {
         super.onCreate(view, savedState);
@@ -24,12 +24,14 @@ public class ImageJoyPresenter extends BeamListFragmentPresenter<ImageJoyFragmen
         JoyModel.getInstance().getImageJoy(1, new DataCallback<ImageJoyPage>() {
             @Override
             public void success(String info, ImageJoyPage data) {
+                getAdapter().clear();
                 getAdapter().addAll(data.getContentlist());
+                page = 2;
             }
 
             @Override
             public void error(String errorInfo) {
-                getView().showError();
+                getView().showError(new Throwable(errorInfo));
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.jude.joy.module.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -8,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -16,30 +16,30 @@ import com.jude.beam.bijection.RequiresPresenter;
 import com.jude.beam.expansion.BeamBaseActivity;
 import com.jude.joy.R;
 import com.jude.joy.module.image.ImageJoyFragment;
+import com.jude.joy.module.setting.AboutUsActivity;
 import com.jude.joy.module.text.TextJoyFragment;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 @RequiresPresenter(MainPresenter.class)
 public class MainActivity extends BeamBaseActivity<MainPresenter> {
 
-    @InjectView(R.id.viewPager)
+    @Bind(R.id.viewPager)
     ViewPager viewpager;
-    @InjectView(R.id.app_bar_layout)
+    @Bind(R.id.app_bar_layout)
     AppBarLayout appBarLayout;
-    @InjectView(R.id.coordinator_layout)
+    @Bind(R.id.coordinator_layout)
     CoordinatorLayout coordinatorLayout;
-    @InjectView(R.id.tab_layout)
+    @Bind(R.id.tab_layout)
     TabLayout tabLayout;
-
-    private ActionBarDrawerToggle mDrawerToggle;
     private MainPagerAdapter mMainPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        getSupportActionBar().setTitle("豆逼  —  给你纯粹的欢乐");
+        ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         tabLayout.setTabTextColors(getResources().getColor(R.color.whiteTrans80), getResources().getColor(R.color.white));
@@ -94,10 +94,13 @@ public class MainActivity extends BeamBaseActivity<MainPresenter> {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.about) {
+            startActivity(new Intent(this, AboutUsActivity.class));
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

@@ -23,6 +23,8 @@ public class TextJoyFragment extends BeamListFragment<TextJoyPresenter,TextJoy> 
         return super.getConfig()
                 .setLoadmoreAble(true)
                 .setRefreshAble(true)
-                .setNoMoreAble(true);
+                .setNoMoreAble(true)
+                .setErrorAble(true)
+                .setErrorTouchToResumeAble(true);
     }
 }

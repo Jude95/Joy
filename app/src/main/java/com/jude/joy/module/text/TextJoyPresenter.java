@@ -12,7 +12,7 @@ import com.jude.joy.model.callback.DataCallback;
  * Created by Mr.Jude on 2015/8/20.
  */
 public class TextJoyPresenter extends BeamListFragmentPresenter<TextJoyFragment,TextJoy> {
-    int page = 0;
+    int page = 1;
     @Override
     protected void onCreate(TextJoyFragment view, Bundle savedState) {
         super.onCreate(view, savedState);
@@ -24,12 +24,14 @@ public class TextJoyPresenter extends BeamListFragmentPresenter<TextJoyFragment,
         JoyModel.getInstance().getTextJoy(1, new DataCallback<TextJoyPage>() {
             @Override
             public void success(String info, TextJoyPage data) {
+                getAdapter().clear();
                 getAdapter().addAll(data.getContentlist());
+                page = 2;
             }
 
             @Override
             public void error(String errorInfo) {
-                getView().showError();
+                getView().showError(new Throwable(errorInfo));
             }
         });
     }
