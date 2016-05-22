@@ -27,7 +27,6 @@
 
 
     <style name="ToolBarStyle">
-        <item name="android:id">@id/toolbar</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?actionBarSize</item>
         <item name="theme">@style/AppThemeDark</item>
