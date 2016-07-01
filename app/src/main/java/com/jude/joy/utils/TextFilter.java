@@ -7,7 +7,9 @@ import com.jude.utils.JUtils;
  */
 public class TextFilter {
     public static String[] FilterStrings = {
-            "</p><p>",
+            "</p>",
+            "<p>",
+            "&nbsp;",
             "&lt;/pstyle=\\\"text-indent:2em;text-align:left;\\\"&gt;"
     };
 

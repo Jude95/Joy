@@ -14,12 +14,12 @@ import com.jude.joy.model.bean.TextJoy;
 @RequiresPresenter(TextJoyPresenter.class)
 public class TextJoyFragment extends BeamListFragment<TextJoyPresenter,TextJoy> {
     @Override
-    protected BaseViewHolder getViewHolder(ViewGroup viewGroup, int i) {
+    public BaseViewHolder getViewHolder(ViewGroup viewGroup, int i) {
         return new TextJoyVH(viewGroup);
     }
 
     @Override
-    protected ListConfig getConfig() {
+    public ListConfig getConfig() {
         return super.getConfig()
                 .setLoadmoreAble(true)
                 .setRefreshAble(true)

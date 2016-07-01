@@ -1,5 +1,7 @@
 package com.jude.joy.model.bean;
 
+import java.util.List;
+
 /**
  * Created by Mr.Jude on 2015/8/20.
  */
@@ -23,13 +25,13 @@ public class ImageJoyPage {
         this.allPage = allPage;
     }
 
-    public ImageJoy[] getContentlist() {
+    public List<ImageJoy> getContentlist() {
         return contentlist;
     }
 
-    public void setContentlist(ImageJoy[] contentlist) {
+    public void setContentlist(List<ImageJoy> contentlist) {
         this.contentlist = contentlist;
     }
 
-    private ImageJoy[] contentlist;
+    private List<ImageJoy> contentlist;
 }

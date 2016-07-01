@@ -10,16 +10,16 @@ import com.jude.joy.utils.RecentDateFormat;
 import com.jude.joy.utils.TextFilter;
 import com.jude.utils.JTimeTransform;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * Created by Mr.Jude on 2015/8/20.
  */
 public class TextJoyVH extends BaseViewHolder<TextJoy> {
-    @Bind(R.id.content)
+    @BindView(R.id.content)
     TextView content;
-    @Bind(R.id.time)
+    @BindView(R.id.time)
     TextView time;
 
     public TextJoyVH(ViewGroup parent) {

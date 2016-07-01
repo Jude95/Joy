@@ -10,10 +10,7 @@
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <meta-data
-            android:name="MODEL"
-            android:value="com.jude.joy.model.JoyModel"
-            ></meta-data>
+
 
         <activity
             android:name=".module.main.MainActivity"
@@ -24,6 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".module.image.PictureActivity"/>
     </application>
 
 </manifest>

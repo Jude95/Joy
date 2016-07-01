@@ -14,11 +14,11 @@ import com.jude.joy.model.bean.ImageJoy;
 @RequiresPresenter(ImageJoyPresenter.class)
 public class ImageJoyFragment extends BeamListFragment<ImageJoyPresenter,ImageJoy> {
     @Override
-    protected BaseViewHolder getViewHolder(ViewGroup viewGroup, int i) {
+    public BaseViewHolder getViewHolder(ViewGroup viewGroup, int i) {
         return new ImageJoyVH(viewGroup);
     }
     @Override
-    protected ListConfig getConfig() {
+    public ListConfig getConfig() {
         return super.getConfig()
                 .setLoadmoreAble(true)
                 .setRefreshAble(true)

@@ -8,7 +8,7 @@ import com.jude.beam.expansion.BeamBaseActivity;
 import com.jude.joy.R;
 import com.jude.utils.JUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 @RequiresPresenter(AboutUsPresenter.class)
 public class AboutUsActivity extends BeamBaseActivity<AboutUsPresenter> {
 
-    @Bind(R.id.version)
+    @BindView(R.id.version)
     TextView version;
 
     @Override

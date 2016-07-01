@@ -1,6 +1,6 @@
 package com.jude.joy.module.image;
 
-import android.net.Uri;
+import android.content.Intent;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,10 +9,11 @@ import com.bumptech.glide.Glide;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.joy.R;
 import com.jude.joy.model.bean.ImageJoy;
+import com.jude.joy.utils.ImageFilter;
 import com.jude.joy.utils.RecentDateFormat;
 import com.jude.utils.JTimeTransform;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -20,11 +21,11 @@ import butterknife.ButterKnife;
  */
 public class ImageJoyVH extends BaseViewHolder<ImageJoy> {
 
-    @Bind(R.id.title)
+    @BindView(R.id.title)
     TextView title;
-    @Bind(R.id.image)
+    @BindView(R.id.image)
     ImageView image;
-    @Bind(R.id.time)
+    @BindView(R.id.time)
     TextView time;
 
     public ImageJoyVH(ViewGroup parent) {
@@ -35,7 +36,15 @@ public class ImageJoyVH extends BaseViewHolder<ImageJoy> {
     @Override
     public void setData(ImageJoy data) {
         title.setText(data.getTitle());
-        Glide.with(getContext()).load(data.getImg()).into(image);
+        Glide.clear(image);
+        Glide.with(getContext())
+                .load(ImageFilter.filter(data.getImg()))
+                .into(image);
         time.setText(new JTimeTransform().parse("yyyy-MM-dd hh:mm:ss",data.getCt()).toString(new RecentDateFormat()));
+        image.setOnClickListener(v->{
+            Intent i = new Intent(getContext(),PictureActivity.class);
+            i.putExtra(PictureActivity.KEY_PICTURE,data.getImg());
+            getContext().startActivity(i);
+        });
     }
 }

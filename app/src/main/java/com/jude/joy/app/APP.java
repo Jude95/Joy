@@ -3,7 +3,6 @@ package com.jude.joy.app;
 import android.app.Application;
 
 import com.jude.beam.Beam;
-import com.jude.http.RequestManager;
 import com.jude.joy.BuildConfig;
 import com.jude.utils.JUtils;
 
@@ -17,8 +16,6 @@ public class APP extends Application {
         super.onCreate();
         JUtils.initialize(this);
         JUtils.setDebug(BuildConfig.DEBUG, "JoyLog");
-        RequestManager.getInstance().init(this);
-        RequestManager.getInstance().setDebugMode(BuildConfig.DEBUG, "JoyNet");
         Beam.init(this);
     }
 }

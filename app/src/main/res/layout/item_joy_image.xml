@@ -22,12 +22,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_marginTop="16dp"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            />
+            android:layout_height="300dp">
+            <com.pnikosis.materialishprogress.ProgressWheel
+                android:id="@+id/wheel"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:matProg_barColor="#5588FF"
+                app:matProg_fillRadius="true"
+                app:matProg_progressIndeterminate="true"
+                android:layout_gravity="center" />
+            <ImageView
+                android:id="@+id/image"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                />
+        </FrameLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"

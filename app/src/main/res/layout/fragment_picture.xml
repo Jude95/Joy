@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/wheel"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:matProg_barColor="#5588FF"
+        app:matProg_fillRadius="true"
+        app:matProg_progressIndeterminate="true"
+        android:layout_gravity="center" />
+
+    <uk.co.senab.photoview.PhotoView
+        android:id="@+id/photoview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="28dp" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?actionBarSize"
+        app:theme="@style/AppThemeDark"
+        android:background="@android:color/transparent"/>
+
+</FrameLayout>
