@@ -11,6 +11,7 @@
     <style name="AppTheme" parent="AppTheme.Base">
 
     </style>
+    <style name="FullScreen" parent="AppTheme.Base"/>
 
 
     <style name="AppThemeDark" parent="Theme.AppCompat.NoActionBar">

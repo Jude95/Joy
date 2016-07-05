@@ -1,6 +1,5 @@
 package com.jude.joy.module.image;
 
-import android.content.Intent;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -41,10 +40,5 @@ public class ImageJoyVH extends BaseViewHolder<ImageJoy> {
                 .load(ImageFilter.filter(data.getImg()))
                 .into(image);
         time.setText(new JTimeTransform().parse("yyyy-MM-dd hh:mm:ss",data.getCt()).toString(new RecentDateFormat()));
-        image.setOnClickListener(v->{
-            Intent i = new Intent(getContext(),PictureActivity.class);
-            i.putExtra(PictureActivity.KEY_PICTURE,data.getImg());
-            getContext().startActivity(i);
-        });
     }
 }
